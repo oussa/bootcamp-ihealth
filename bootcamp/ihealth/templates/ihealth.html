@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% get_available_languages as LANGUAGES %}
+{% get_current_language as CURRENT_LANGUAGE %}
+
+{% block title %}iHealth{% endblock %}
+
+{% block main %}
+  <div class="page-header">
+    <h1>{% trans 'iHealth' %}</h1>
+  </div>
+  <div class="row" style="margin-top: 2em">
+    <div class="col-md-3">
+      {% include 'partial_ihealth_menu.html' with active='appointments' %}
+    </div>
+    <div class="col-md-9">
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+      <h3 style="margin-top: 0">{% trans 'Appointments' %}</h3>
+      <table class="table" style="text-align: center">
+          <tr style="font-weight: bold">
+              <td>{{ '#' }}</td>
+              <td>{{ 'Appointment' }}</td>
+              <td>{{ 'Patient' }}</td>
+              <td>{{ 'Type' }}</td>
+              <td>{{ 'Urgency' }}</td>
+              <td>{{ 'Date & Time' }}</td>
+              <td>{{ 'Specialty' }}</td>
+              <td>{{ 'Health Prof' }}</td>
+              <td>{{ 'Institution' }}</td>
+              <td>{{ 'State' }}</td>
+          </tr>
+          {% for appointment in appointments %}
+              <tr>
+                <td>{{ appointment.id }}</td>
+                <td>{{ appointment.rec_name }}</td>
+                <td>{{ appointment.patient }}</td>
+                <td>{{ appointment.appointment_type }}</td>
+                <td>{{ appointment.urgency }}</td>
+                <td>{{ appointment.appointment_date }}</td>
+                <td>{{ appointment.speciality }}</td>
+                <td>{{ appointment.healthprof }}</td>
+                <td>{{ appointment.institution }}</td>
+                <td>{{ appointment.state }}</td>
+              </tr>
+          {% endfor %}
+      </table>
+    </div>
+  </div>
+{% endblock main %}

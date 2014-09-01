@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% get_available_languages as LANGUAGES %}
+{% get_current_language as CURRENT_LANGUAGE %}
+
+{% block title %}iHealth{% endblock %}
+
+{% block main %}
+  <div class="page-header">
+    <h1>{% trans 'iHealth' %}</h1>
+  </div>
+  <div class="row" style="margin-top: 2em">
+    <div class="col-md-3">
+      {% include 'partial_ihealth_menu.html' with active='patients' %}
+    </div>
+    <div class="col-md-9">
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+      <h3 style="margin-top: 0">{% trans 'Patients' %}</h3>
+      <table class="table" style="text-align: center">
+          <tr style="font-weight: bold">
+              <td>{{ '#' }}</td>
+              <td>{{ 'Patient' }}</td>
+              <td>{{ 'Lastname' }}</td>
+              <td>{{ 'Date of Birth' }}</td>
+          </tr>
+          {% for patient in patients %}
+              <tr>
+                <td>{{ patient.id }}</td>
+                <td>{{ patient.rec_name }}</td>
+                <td>{{ patient.lastname }}</td>
+                <td>{{ patient.dob }}</td>
+              </tr>
+          {% endfor %}
+      </table>
+    </div>
+  </div>
+{% endblock main %}

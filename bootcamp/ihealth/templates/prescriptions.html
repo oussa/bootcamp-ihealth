@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% get_available_languages as LANGUAGES %}
+{% get_current_language as CURRENT_LANGUAGE %}
+
+{% block title %}iHealth{% endblock %}
+
+{% block main %}
+  <div class="page-header">
+    <h1>{% trans 'iHealth' %}</h1>
+  </div>
+  <div class="row" style="margin-top: 2em">
+    <div class="col-md-3">
+      {% include 'partial_ihealth_menu.html' with active='prescriptions' %}
+    </div>
+    <div class="col-md-9">
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+      <h3 style="margin-top: 0">{% trans 'Prescriptions' %}</h3>
+      <table class="table" style="text-align: center">
+          <tr style="font-weight: bold">
+              <td>{{ '#' }}</td>
+              <td>{{ 'Prescription ID' }}</td>
+              <td>{{ 'Patient' }}</td>
+              <td>{{ 'Prescribed by' }}</td>
+              <td>{{ 'Prescription Date' }}</td>
+          </tr>
+          {% for prescription in prescriptions %}
+              <tr>
+                <td>{{ prescription.id }}</td>
+                <td>{{ prescription.rec_name }}</td>
+                <td>{{ prescription.patient }}</td>
+                <td>{{ prescription.user_id }}</td>
+                <td>{{ prescription.prescription_date }}</td>
+              </tr>
+          {% endfor %}
+      </table>
+    </div>
+  </div>
+{% endblock main %}
