@@ -1,6 +1,6 @@
 # Bootcamp-iHealth
 
-Bootcamp-iHealth is an open source **medical social network** working as a web application for trytond and the GnuHealth module, and built using bootcamp (an enterprise social network built with [Python][0] using the [Django Web Framework][1].
+Bootcamp-iHealth is an open source **medical social network** working as a web application for Trytond[0] and the GnuHealth[1] module, and built using bootcamp (an enterprise social network built with [Python][2] using the [Django Web Framework][3].
 
 The project has four basic apps:
 
@@ -32,6 +32,7 @@ The Q&A app works just like Stack Overflow. You can mark a question as favorite,
 ## Technology Stack
 
 - Python 2.7
+- Trytond 3.2.0
 - Django 1.6.5
 - Twitter Bootstrap 3
 - jQuery 2
@@ -39,14 +40,16 @@ The Q&A app works just like Stack Overflow. You can mark a question as favorite,
 
 ## Installation Guide
 
-Take a look at our wiki page for a detailed [installation guide][3].
+Take a look at our wiki page for a detailed [installation guide][5].
 
 
 ## Demo
 
-Try Bootcamp now at [http://trybootcamp.vitorfs.com][2].
+Try Bootcamp now (without iHealth App) at [http://trybootcamp.vitorfs.com][4].
 
-[0]: https://www.python.org/
-[1]: https://www.djangoproject.com/
-[2]: http://trybootcamp.vitorfs.com/
-[3]: https://github.com/vitorfs/bootcamp/wiki/Installing-and-Running-Bootcamp
+[0]: http://www.tryton.org/
+[1]: http://health.gnu.org/
+[2]: https://www.python.org/
+[3]: https://www.djangoproject.com/
+[4]: http://trybootcamp.vitorfs.com/
+[5]: https://github.com/vitorfs/bootcamp/wiki/Installing-and-Running-Bootcamp
