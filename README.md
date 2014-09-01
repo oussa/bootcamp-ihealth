@@ -1,6 +1,6 @@
 # Bootcamp-iHealth
 
-Bootcamp-iHealth is an open source **medical social network** working as a web application for [Trytond][0] and the [GnuHealth][1] module, and built using bootcamp (an enterprise social network built with [Python][2] using the [Django Web Framework][3].
+Bootcamp-iHealth is an open source **medical social network** working as a web application for [Trytond][0] and the [GnuHealth][1] module, and built using bootcamp (an enterprise social network built with [Python][2] using the [Django Web Framework][3]).
 
 The project has four basic apps:
 
